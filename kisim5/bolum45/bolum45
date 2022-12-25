@@ -1,0 +1,4 @@
+docker image pull ozgurozturknet/adanzyedocker
+docker image pull ubuntu
+docker pull ozgurozturknet/adanzyedocker:v1
+docker pull ozgurozturknet/adanzyedocker:v2

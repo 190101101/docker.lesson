@@ -1,0 +1,9 @@
+docker container run --name websunucu -p 80:80 -d ozgurozturknet/adanzyedocker
+docker container exec -it websunucu sh
+ls -l
+cd /usr/local/apache2/htdocs
+ps
+kill 1
+docker start websunucu
+docker stop websunucu
+docker container run --name websunucu2 -p 80:80 ozgurozturknet/adanzyedocker

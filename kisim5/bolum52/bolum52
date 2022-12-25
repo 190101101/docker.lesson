@@ -1,0 +1,2 @@
+docker image build -t ozgurozturknet/hello-docker .
+docker container run -d --name hellodocker -p 80:80 ozgurozturknet/hello-docker

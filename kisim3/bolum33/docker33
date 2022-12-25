@@ -1,0 +1,11 @@
+docker network ls
+docker network inspect bridge
+docker container run -d ozgurozturknet/adanzyedocker
+docker exec -it 551 sh
+ifconfig
+ping 8.8.8.8
+docker container run -it --name deneme ozgurozturknet/adanzyedocker sh
+ping 172.17.0.2
+docker container run -it --name deneme1 --net host ozgurozturknet/adanzyedocker sh
+docker container run -it --name deneme2 ozgurozturknet/adanzyedocker sh
+docker container run -it --name deneme3 --net none ozgurozturknet/adanzyedocker sh

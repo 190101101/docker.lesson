@@ -1,0 +1,4 @@
+docker pull mysql
+docker image tag mysql 190101101/project:latest
+docker push 190101101/project:latest
+docker pull 190101101/project:latest

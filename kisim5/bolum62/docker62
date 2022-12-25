@@ -1,0 +1,16 @@
+docker pull registry
+docker run -d -p 5000:5000 --restart always --name registry registry
+docker image tag ozgurozturknet/hello-app:latest 192.168.99.100:5000/hello-app:latest
+docker image push 192.168.99.100:5000/hello-app:latest
+
+docker image tag 190101101/project:latest 192.168.99.100:5000/project:latest
+docker image push 192.168.99.100:5000/project:latest
+
+
+-------------------
+docker run -d -p 5000:5000 --restart always --name registry registry:2
+docker run -d -p 5000:5000 --restart no --name registry registry:2
+docker run -d -p 5000:5000 --restart on-failure --name registry registry:2
+docker run -d -p 5000:5000 --restart unless-stopped --name registry registry:2
+
+

@@ -1,0 +1,5 @@
+docker swarm init --advertise-addr 192.168.0.13
+docker swarm join --token sdklasjdkasjdauidwqjcwef 192.168.0.13:2377
+docker swarm join-token worker
+docker service create --name test --replicas=5 -p 8080:80 nginx 
+docker service ps test

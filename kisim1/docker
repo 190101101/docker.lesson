@@ -1,0 +1,7 @@
+docker image pull ozgurozturknet/app1
+docker container run --name ilkcontainer ozgurozturknet/app1
+docker container run --name ikincicontainer ozgurozturknet/app1
+docker run hello-world
+docker container run hello-world
+docker image rm -f hello-world
+

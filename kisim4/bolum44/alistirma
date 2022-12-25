@@ -1,0 +1,16 @@
+docker ps -a
+docker container prune
+docker container rm -f zxc asd qwe
+docker network ls
+docker network prune
+docker network create --driver=bridge --subnet=10.10.0.0/16 --ip-range=10.10.10.0/24 --gateway=10.10.10.10 alistirma-agi
+docker network inspect aa9
+docker container run -d --name web1 --net alistirma-agi -p 8080:80 nginx:1.16
+docker logs d8b
+docker container run -dit --name test1 ozgurozturknet/adanzyedocker sh
+docker network connect alistirma-agi test1
+docker attach test1
+ping web1
+docker container run -d --name websrv --net alistirma-agi -p 80:80 --cpus="1" --env-file .\env.list ozgurozturknet/webkayit
+docker container run -d --name mysqldb --env-file .\envmysql.list --net alistirma-agi --memory=1g ozgurozturknet/webdb
+docker logs mysqldb

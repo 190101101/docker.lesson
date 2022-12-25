@@ -1,0 +1,7 @@
+docker container run -it --env VAR1=denem1 --env VAR2=denem2 ubuntu bash
+printenv
+echo $VAR1
+docker container run -it --env TEMP ubuntu bash
+docker container run -it --env-file .\env.list ubuntu bash
+docker container run --env veritabani=testveritabani.pizzadukkani.com ozgurozturknet/env1
+docker container run --env veritabani=prod.pizzadukkani.com ozgurozturknet/env1

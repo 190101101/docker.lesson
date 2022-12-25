@@ -1,0 +1,4 @@
+docker image build -t execshell .
+docker container run --name exec execshell
+docker container run --name shell execshell
+docker cp javauygulama:/usr/src/uygulama .

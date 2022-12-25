@@ -1,0 +1,3 @@
+docker top con1
+docker stats con1
+docker stats

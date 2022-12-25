@@ -1,0 +1,2 @@
+docker save ozgurozturknet/hello-app:latest -o con1imaj.tar
+docker load -i .\con1imaj.tar

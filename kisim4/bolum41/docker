@@ -1,0 +1,78 @@
+192.168.99.100
+docker container run --help
+docker container run --name ilkcontainer ozgurozturknet/app1
+docker container run -p 80:80 ozgurozturknet/adanzyedocker
+docker container logs 99c
+docker container run --name denemecon ozgurozturknet/adanzyedocker java app1
+docker container stop 99c
+docker container run -d -p 80:80 ozgurozturknet/adanzyedocker
+docker container rm -f 99c
+docker container run --name websunucu -p 80:80 -d ozgurozturknet/adanzyedocker
+docker container exec -it websunucu sh
+ls -l
+cd /usr/local/apache2/htdocs
+ps
+kill 1
+docker start websunucu
+docker stop websunucu
+docker container run --name websunucu2 -p 80:80 ozgurozturknet/adanzyedocker
+echo "hello world" > index.html
+cat index.html
+docker image prune -a
+docker image pull alpine
+docker image pull ozgurozturknet/hello-app
+docker image pull alpine
+docker volume create ilkvolume
+docker volume inspect ilkvolume
+docker container run -it -v ilkvolume:/uygulama alpine sh
+touch abc.txt
+echo "bunu ben ilk containerden ekledim" >> abc.txt
+docker volume ls
+docker container run -it -v ilkvolume:/deneme2 centos sh
+docker container run -it -v ilkvolume:/deneme3:ro centos sh
+docker container run --rm -it ozgurozturknet/adanzyedocker sh
+docker container run --rm -it -v deneme1:/usr/src/myapp ozgurozturknet/adanzyedocker sh
+docker container run --rm -it -v deneme1:/zxc alpine sh
+docker container run -d -p 80:80 ilkweb nginx
+docker exec -it 636 sh
+docker info
+docker network ls
+docker network inspect bridge
+docker container run -d ozgurozturknet/adanzyedocker
+docker exec -it 551 sh
+ifconfig
+ping 8.8.8.8
+docker container run -it --name deneme ozgurozturknet/adanzyedocker sh
+ping 172.17.0.2
+docker container run -d --name websunucu1 ozgurozturknet/adanzyedocker
+docker container run -it --name database1 ozgurozturknet/adanzyedocker sh
+docker network create kopru1
+docker container run -dit --name websunucu --net kopru1 ozgurozturknet/adanzyedocker sh
+docker container run -dit --name database --net kopru1 ozgurozturknet/adanzyedocker sh
+docker network inspect kopru1
+docker attach websunucu
+docker network create --driver=bridge --subnet=10.10.0.0/16 --ip-range=10.10.10.0/24 --gateway=10.10.10.10 kopru2
+docker network connect kopru2 database
+docker network disconnect kopru2 database
+docker container run -d --name appbir ozgurozturknet/app1
+docker logs 085
+docker container run -d --name con1 -p 80:80 nginx
+docker exec -it con1 sh
+ls -l
+docker logs --help
+docker run -d --name con1 -p 80:80 nginx
+docker logs --details cef
+docker logs -t con1
+docker logs --until 2022-09-11T22:42:19 con1
+docker logs --since 2022-09-11T22:42:19 con1
+docker logs --tail 3 con1
+docker logs -f con1
+docker info
+docker container run --log-driver splunk nginx
+docker top con1
+docker stats con1
+docker stats
+docker container run -d ozgurozturknet/adanzyedocker
+docker container run -d --memory=100m ozgurozturknet/adanzyedocker
+docker container run -d --memory=100m --memory-swap=200m ozgurozturknet/adanzyedocker
+docker container run -d --cpus="1" --cpuset-cpus="0,3" ozgurozturknet/adanzyedocker

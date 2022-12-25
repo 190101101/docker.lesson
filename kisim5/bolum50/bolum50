@@ -1,0 +1,5 @@
+docker image build -t ozgurozturknet/py .
+docker container run --rm -p 80:5000 ozgurozturknet/py
+docker image build -t ozgurozturknet/node .
+docker image build -t node2 .
+docker container run -d -p 80:8080 node2

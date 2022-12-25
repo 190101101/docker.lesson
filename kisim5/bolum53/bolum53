@@ -1,0 +1,3 @@
+docker image build -t ozgurozturknet/hello-docker .
+docker container run -d --name hellodocker -p 80:80 ozgurozturknet/hello-docker
+docker container run -d -p 80:80 --name hd2 -e KULLANICI="Apsi" ozgurozturknet/hello-docker

@@ -1,0 +1,10 @@
+docker container run -d --name websunucu1 ozgurozturknet/adanzyedocker
+docker container run -it --name database1 ozgurozturknet/adanzyedocker sh
+docker network create kopru1
+docker container run -dit --name websunucu --net kopru1 ozgurozturknet/adanzyedocker sh
+docker container run -dit --name database --net kopru1 ozgurozturknet/adanzyedocker sh
+docker network inspect kopru1
+docker attach websunucu
+docker network create --driver=bridge --subnet=10.10.0.0/16 --ip-range=10.10.10.0/24 --gateway=10.10.10.10 kopru2
+docker network connect kopru2 database
+docker network disconnect kopru2 database

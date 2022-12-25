@@ -1,0 +1,5 @@
+docker container run -d --name appbir ozgurozturknet/app1
+docker logs 085
+docker container run -d --name con1 -p 80:80 nginx
+docker exec -it con1 sh
+ls -l

@@ -1,0 +1,3 @@
+docker image build -t ozgurozturknet/merhaba .
+docker container run ozgurozturknet/merhaba
+docker image history ozgurozturknet/merhaba

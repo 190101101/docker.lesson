@@ -1,0 +1,9 @@
+docker top con1
+docker stats con1
+docker stats
+
+docker container run -d ozgurozturknet/adanzyedocker
+docker container run -d --memory=100m ozgurozturknet/adanzyedocker
+docker container run -d --memory=100m --memory-swap=200m ozgurozturknet/adanzyedocker
+
+docker container run -d --cpus="1" --cpuset-cpus="0,3" ozgurozturknet/adanzyedocker

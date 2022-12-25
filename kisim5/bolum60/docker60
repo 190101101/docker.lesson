@@ -1,0 +1,3 @@
+apt-get install wget
+wget https://wordpress.org/latest.tar.gz
+wget --version

@@ -1,0 +1,6 @@
+docker container run -p 80:80 ozgurozturknet/adanzyedocker
+docker container logs 99c
+docker container run --name denemecon ozgurozturknet/adanzyedocker java app1
+docker container stop 99c
+docker container run -d -p 80:80 ozgurozturknet/adanzyedocker
+docker container rm -f 99c

@@ -1,0 +1,9 @@
+docker-compose up -d
+docker-compose up
+docker-compose down
+docker-compose config
+docker-compose images
+docker-compose logs
+docker-compose exec websrv ls -al
+docker-compose down
+docker-compose ps

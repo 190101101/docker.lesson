@@ -1,0 +1,38 @@
+docker pull centos:latest
+docker pull centos:7
+docker pull ubuntu:latest
+docker pull ubuntu:18.04
+docker pull ubuntu:20.04
+docker pull alpine:latest
+docker pull nginx:latest
+docker pull nginx:alpine
+docker image tag ubuntu:18.04 190101101/alistirma:ubuntu
+docker image push 190101101/alistirma:ubuntu
+
+docker image build -t 190101101/alistirma:kirmizi --no-cache --build-arg RENK=kirmizi .
+docker image build -t 190101101/alistirma:sari --no-cache --build-arg RENK=sari .
+docker container run -d -p 80:80 --name kirmizi 190101101/alistirma:kirmizi
+docker container run -d -p 80:80 --name sari 190101101/alistirma:sari
+docker container run -it 190101101/alistirma:kirmizi sh
+
+
+docker image build -t 190101101/alistirma:java --no-cache -f Dockerfile.multi .
+docker container run 190101101/alistirma:java
+
+docker push 190101101/alistirma:kirmizi
+docker push 190101101/alistirma:sari
+docker push 190101101/alistirma:java
+
+docker run -d -p 5000:5000 --restart always --name registry registry
+
+docker image tag 190101101/alistirma:kirmizi 127.0.0.1:5000/kirmizi:latest
+docker image tag 190101101/alistirma:sari 127.0.0.1:5000/sari:latest
+docker image tag 190101101/alistirma:java 127.0.0.1:5000/java:latest
+
+docker push 127.0.0.1:5000/kirmizi:latest
+docker push 127.0.0.1:5000/sari:latest
+docker push 127.0.0.1:5000/java:latest
+
+docker run -d -p 5000:5000 --restart always --name registry registry:2
+
+http://192.168.99.100:5000/v2/_catalog
